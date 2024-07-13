@@ -38,6 +38,7 @@ const Transaction = () => {
         className={`user-item bg-slate-800 p-3 rounded-md hover:border-b hover:scale-105 hover:cursor-pointer ${
           selectedUser === user ? "bg-slate-500  text-white scale-105 border-b" : ""
 
+
         }`}
         onClick={() => {
           setSelectedUser(user);
