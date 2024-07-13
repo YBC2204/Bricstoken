@@ -144,3 +144,4 @@ router.post('/transactions', async (req, res) => {
         res.status(500).json({ error: 'Transaction failed', message: error.message });
     }
 });
+module.exports = router;
