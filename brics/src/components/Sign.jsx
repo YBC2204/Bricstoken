@@ -37,7 +37,7 @@ const Sign = () => {
     e.preventDefault();
     try {
       const response = await axios.post('http://localhost:3000/api/users/register', {
-        username,
+        name,
         selectedCountry,
         email,
         positionInCourt
