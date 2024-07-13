@@ -18,7 +18,7 @@ const SignIn = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className={`flip-card ${isSignIn }`}>
+      <div className={`flip-card ${isSignIn ? 'width-300' : 'width-490'}`}>
         <div className={`flip-card-inner ${isSignIn ? '' : 'flipped'}`}>
           <div className="flip-card-front box bg-white p-8 rounded-lg shadow-lg">
             <h2 className="text-xl font-bold mb-6 text-center">Sign In</h2>
