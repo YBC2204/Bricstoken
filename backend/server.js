@@ -8,7 +8,7 @@ const buytokenRoute = require('./routes/buytokenRoute');
 const transactionRoute = require('./routes/transactionRoute')
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 4000;
 
 // Middleware
 app.use(bodyParser.json());
@@ -26,7 +26,7 @@ app.use('/api/token', buytokenRoute);
 app.use('/api', transactionRoute);
 
 // MongoDB Connection
-mongoose.connect('mongodb://127.0.0.1:27017/stellar', {
+mongoose.connect('mongodb://127.0.0.1:27017/brics', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
