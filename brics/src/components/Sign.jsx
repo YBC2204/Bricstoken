@@ -22,7 +22,8 @@ const Sign = () => {
   ];
 
   return (
-    <div className="h-screen bg-white flex justify-center items-center">
+    <div class="h-screen  bg-gradient-to-r from-slate-800 via-slate-900 to-black flex justify-center items-center">
+
       <div className={`container ${isSignUp ? 'right-panel-active' : ''}`}>
         <div className="form-container sign-up-container">
           <form className="bg-white p-6 rounded-lg">

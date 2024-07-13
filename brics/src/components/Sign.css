@@ -1,164 +1,163 @@
 .container {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-    position: relative;
-    min-height: 440px;
-    overflow: hidden;
-    width: 50%; /* Ensure width is reduced */
-  }
-  
-  .form-container {
-    position: absolute;
-    top: 0;
-    height: 100%;
-    transition: all 0.6s ease-in-out;
-  }
-  
-  .sign-in-container {
-    left: 0;
-    width: 50%;
-    z-index: 2;
-  }
-  
-  .sign-up-container {
-    left: 0;
-    width: 50%;
-    opacity: 0;
-    z-index: 1;
-  }
-  
-  .container.right-panel-active .sign-in-container {
-    transform: translateX(100%);
-  }
-  
-  .container.right-panel-active .sign-up-container {
-    transform: translateX(100%);
-    opacity: 1;
-    z-index: 5;
-  }
-  
-  .overlay-container {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 50%;
-    height: 100%;
-    overflow: hidden;
-    transition: transform 0.6s ease-in-out;
-    z-index: 100;
-  }
-  
-  .overlay {
-    background: linear-gradient(to right, hsl(247, 90%, 56%), #8674e7);
-    color: #fff;
-    position: relative;
-    left: -100%;
-    height: 100%;
-    width: 200%;
-    transform: translateX(0);
-    transition: transform 0.6s ease-in-out;
-  }
-  
-  .container.right-panel-active .overlay-container {
-    transform: translateX(-100%);
-  }
-  
-  .container.right-panel-active .overlay {
-    transform: translateX(50%);
-  }
-  
-  .overlay-panel {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 0 40px;
-    text-align: center;
-    top: 0;
-    height: 100%;
-    width: 50%;
-    transform: translateX(0);
-    transition: transform 0.6s ease-in-out;
-  }
-  
-  .overlay-left {
-    transform: translateX(-20%);
-  }
-  
-  .container.right-panel-active .overlay-left {
-    transform: translateX(0);
-  }
-  
-  .overlay-right {
-    right: 0;
-    transform: translateX(0);
-  }
-  
-  .container.right-panel-active .overlay-right {
-    transform: translateX(20%);
-  }
-  
-  .input-field {
-    background-color:white;
-    color: black;
-    border: none;
-    padding: 12px 15px;
-    margin: 8px 0;
-    width: 100%;
-  }
-  
-  .btn-primary {
-    border: none;
-    outline: none;
-    padding: 12px 45px;
-    background-color: #593cff;
-    color: white;
-    font-size: 12px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    transition: transform 80ms ease-in;
-    border-radius: 15px; /* Rounded button */
-  }
-  
-  .btn-primary:hover {
-    background-color: #6c5dfa;
-  }
-  
-  .btn-secondary {
-    border: 1px solid white;
-    outline: none;
-    padding: 12px 45px;
-    background-color: transparent;
-    color: white;
-    font-size: 12px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    transition: transform 80ms ease-in;
-    border-radius: 15px; /* Rounded button */
-  }
-  
-  .btn-secondary:hover {
-    background-color: rgba(255, 255, 255, 0.3);
-  }
-  
-  /* Additional styles for dropdown */
-  select.input-field {
-    background-color: #eee;
-    border: none;
-    padding: 12px 15px;
-    margin: 8px 0;
-    width: 100%;
-    border-radius: 5px;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns%3D%22http://www.w3.org/2000/svg%22 width%3D%2210%22 height%3D%226%22 viewBox%3D%220 0 10 6%22%3E%3Cpath fill%3D%22%23000%22 fill-rule%3D%22evenodd%22 d%3D%22M5 3.5L1 0l-.7.7L5 4.7l4.7-4L10 0 5 3.5z%22/%3E%3C/svg%3E');
-    background-repeat: no-repeat;
-    background-position: right 10px center;
-    background-size: 12px;
-  }
-  
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 14px 28px rgba(255, 255, 255, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  position: relative;
+  min-height: 440px;
+  overflow: hidden;
+  width: 50%; /* Ensure width is reduced */
+}
+
+.form-container {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  transition: all 0.6s ease-in-out;
+}
+
+.sign-in-container {
+  left: 0;
+  width: 50%;
+  z-index: 2;
+}
+
+.sign-up-container {
+  left: 0;
+  width: 50%;
+  opacity: 0;
+  z-index: 1;
+}
+
+.container.right-panel-active .sign-in-container {
+  transform: translateX(100%);
+}
+
+.container.right-panel-active .sign-up-container {
+  transform: translateX(100%);
+  opacity: 1;
+  z-index: 5;
+}
+
+.overlay-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  transition: transform 0.6s ease-in-out;
+  z-index: 100;
+}
+
+.overlay {
+  background:  hsl(215, 73%, 13%);
+  color: #fff;
+  position: relative;
+  left: -100%;
+  height: 100%;
+  width: 200%;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+}
+
+.container.right-panel-active .overlay-container {
+  transform: translateX(-100%);
+}
+
+.container.right-panel-active .overlay {
+  transform: translateX(50%);
+}
+
+.overlay-panel {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 40px;
+  text-align: center;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+}
+
+.overlay-left {
+  transform: translateX(-20%);
+}
+
+.container.right-panel-active .overlay-left {
+  transform: translateX(0);
+}
+
+.overlay-right {
+  right: 0;
+  transform: translateX(0);
+}
+
+.container.right-panel-active .overlay-right {
+  transform: translateX(20%);
+}
+
+.input-field {
+  background-color:white;
+  color: black;
+  border: none;
+  padding: 12px 15px;
+  margin: 8px 0;
+  width: 100%;
+}
+
+.btn-primary {
+  border: none;
+  outline: none;
+  padding: 12px 45px;
+  background-color: #160e41;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: transform 80ms ease-in;
+  border-radius: 15px; /* Rounded button */
+}
+
+.btn-primary:hover {
+  background-color: #25204d;
+}
+
+.btn-secondary {
+  border: 1px solid white;
+  outline: none;
+  padding: 12px 45px;
+  background-color: transparent;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: transform 80ms ease-in;
+  border-radius: 15px; /* Rounded button */
+}
+
+.btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Additional styles for dropdown */
+select.input-field {
+  background-color: #eee;
+  border: none;
+  padding: 12px 15px;
+  margin: 8px 0;
+  width: 100%;
+  border-radius: 5px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns%3D%22http://www.w3.org/2000/svg%22 width%3D%2210%22 height%3D%226%22 viewBox%3D%220 0 10 6%22%3E%3Cpath fill%3D%22%23000%22 fill-rule%3D%22evenodd%22 d%3D%22M5 3.5L1 0l-.7.7L5 4.7l4.7-4L10 0 5 3.5z%22/%3E%3C/svg%3E');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 12px;
+}
