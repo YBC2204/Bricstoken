@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 const BuyToken = () => {
   return (
     <div className="btoken-container">
-    <div className="card" style={{ display:'flex',alignItems:'center',justifyContent:'center',backgroundColor: '#141519', padding: '20px', height:'50vh',borderRadius: '10px' }}>
+    <div className="card bg-gray-800" style={{ display:'flex',alignItems:'center',justifyContent:'center', padding: '20px', height:'50vh',borderRadius: '10px' }}>
       {/* #7563ec */}
         <div className="mb-3">
         <select className=" drop-item center-item form-select" aria-label="Default select example">
