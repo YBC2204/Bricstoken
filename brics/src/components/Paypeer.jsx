@@ -3,8 +3,8 @@ import React from 'react'
 const Paypeer = () => {
   return (
     <div>
-       <div className="btoken-container">
-    <div className="card  border border-white" style={{ display:'flex',alignItems:'center',justifyContent:'center',backgroundColor: '#141519', padding: '20px', height:'50vh',borderRadius: '10px' }}>
+       <div className="btoken-container ">
+    <div className="  bg-gray-800" style={{ display:'flex',alignItems:'center',justifyContent:'center', padding: '20px', height:'50vh',borderRadius: '10px' }}>
       {/* #7563ec */}
         <div className="mb-3 ">
         
