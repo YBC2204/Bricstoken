@@ -1,9 +1,29 @@
 import React from 'react';
 import QuestionMarkIcon from '@mui/icons-material/QuestionMark';
 import AddIcon from '@mui/icons-material/Add';
-const Balance = () => {
-  return (
+import axios from 'axios';
 
+const Balance = () => {
+  const balancefn = async (e) => {
+    e.preventDefault();
+    try {
+    const token = localStorage.getItem('token'); 
+     console.log(token)
+      const response = await axios.get('http://localhost:3000/api/token/balance/bric',  {
+        headers: {
+          'Authorization': `Bearer ${token}`,
+        }
+      });
+      let balbric = response.data.bricBalance.balance;
+      console.log(balbric);
+      // Handle response
+    } catch (error) {
+      console.error('Balance failed:', error);
+      setError('Balance failed. Please try again later.');
+    }
+  };
+  return (
+    
     <div className="flex flex-col items-center justify-center bg-gray-900 p-4 rounded-lg shadow-lg w-80 h-96 border border-white">
       <div className="w-full text-center text-white mb-4">
         <h1 className="text-xl font-bold">Balance</h1>
@@ -11,7 +31,7 @@ const Balance = () => {
       </div>
       <div className="w-full">
         <div className="bg-gray-800 p-4 rounded-lg mb-4 hover:border border-yellow-300 ">
-          <div className="flex justify-between items-center text-white hover:text-yellow-300">
+          <div onClick={balancefn} className="flex justify-between items-center text-white hover:text-yellow-300">
             <div className=''>
               <h3 className="text-lg font-bold ">BRICS</h3>
               <p className="text-sm text-gray-400">Brics Token</p>

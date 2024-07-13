@@ -18,7 +18,7 @@ const Transaction = () => {
 
   const renderUsers = () => {
     return users.map((user) => (
-      <div key={user} className="user-item  hover:border-b hover:scale-105 hover:cursor-pointer">
+      <div key={user} className="user-item hover:border-b hover:scale-105 hover:cursor-pointer">
         {user}
       </div>
     ));
