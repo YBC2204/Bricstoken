@@ -1,6 +1,28 @@
 import React, { useState } from 'react';
+import axios from 'axios'
 
 const BuyToken = () => {
+  const [amount, setAmount] = useState('');
+
+  const [error, setError] = useState('');
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const formData = new FormData();
+      formData.append('amount', amount);
+
+      const response = await axios.post('http://localhost:3000/api/token/buy-token', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      });
+      // Handle response
+    } catch (error) {
+      console.error('Upload failed:', error);
+      setError('Upload failed. Please try again later.');
+    }
+  };
   return (
     <div className="btoken-container">
     <div className="card" style={{ display:'flex',alignItems:'center',justifyContent:'center',backgroundColor: '#141519', padding: '20px', height:'50vh',borderRadius: '10px' }}>
@@ -40,7 +62,7 @@ const BuyToken = () => {
           <div className="join">
             <div className="grow">
               <div className='center-item drop-item'>
-                <input id="amount" name="amount" className="input-bordered center-item input join-item ip-padding" type="text" placeholder="1.00" />
+                <input   onChange={(e) => setCaseDescription(e.target.value)} id="amount" name="amount" className="input-bordered center-item input join-item ip-padding" type="text" placeholder="1.00" />
               </div>
               {/* style={{ width: '50%' }} */}
             </div>
@@ -53,7 +75,7 @@ const BuyToken = () => {
           </div>
           {/* <input style={{width:'25%'}} className="input-field" type="n" placeholder="Email" /> */}
           <div className='center-item'>
-          <button type="button" className="btn btn-outline-danger center-item">Buy Now</button>
+          <button type="button" className="btn btn-outline-danger center-item" onClick={handleSubmit}>Buy Now</button>
           </div>
         </div>
      
