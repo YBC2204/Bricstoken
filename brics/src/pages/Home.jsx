@@ -10,7 +10,7 @@ const Home = () => {
   return (
     <div className=' h-screen flex'>
       <div className='bg-blue-900 w-1/4 '></div>
-      <div className='flex flex-col text-white'>
+      <div className='flex flex-col text-white w-3/4'>
        <div>
         <Balance/>
        </div>
