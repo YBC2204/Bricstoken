@@ -19,8 +19,8 @@ const BuyToken = () => {
       });
       // Handle response
     } catch (error) {
-      console.error('Upload failed:', error);
-      setError('Upload failed. Please try again later.');
+      console.error('Buy Token failed:', error);
+      setError('Buy Token failed. Please try again later.');
     }
   };
   return (
@@ -62,7 +62,9 @@ const BuyToken = () => {
           <div className="join">
             <div className="grow">
               <div className='center-item drop-item'>
-                <input   onChange={(e) => setCaseDescription(e.target.value)} id="amount" name="amount" className="input-bordered center-item input join-item ip-padding" type="text" placeholder="1.00" />
+                <input  
+                value={amount}
+                onChange={(e) => setAmount(e.target.value)} id="amount" name="amount" className="input-bordered center-item input join-item ip-padding" type="text" placeholder="1.00" />
               </div>
               {/* style={{ width: '50%' }} */}
             </div>
