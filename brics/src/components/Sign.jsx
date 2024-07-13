@@ -1,11 +1,14 @@
-import React, { useState } from 'react';
+import  { useEffect, useState } from 'react';
 import './Sign.css';
+
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+
 
 const Sign = () => {
   const [isSignUp, setIsSignUp] = useState(false);
   const [selectedCountry, setSelectedCountry] = useState('');
+
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
   const [error, setError] = useState('');
@@ -15,9 +18,12 @@ const Sign = () => {
 
   const navigate = useNavigate();
 
+
   const handleToggle = () => {
     setIsSignUp(!isSignUp);
   };
+
+
 
   const countries = [
     { value: 'brazil', label: 'Brazil' },
@@ -96,9 +102,11 @@ const Sign = () => {
   }
 
   return (
-    <div className="h-screen bg-white flex justify-center items-center">
-      <div className={`container ${isSignUp ? 'right-panel-active' : ''}`}>
+    <div className="h-screen   bg-gradient-to-r from-slate-800 via-slate-900 to-black flex justify-center items-center">
+
+      <div className={`border border-white container ${isSignUp ? 'right-panel-active' : ''}`}>
         <div className="form-container sign-up-container">
+
           <form className="bg-white p-6 rounded-lg" onSubmit={registerfn}>
             <h1 className="text-2xl font-bold mb-4">Create Account</h1>
             <input
@@ -117,13 +125,14 @@ const Sign = () => {
               placeholder="Email"
               required
             />
+
             <select
               value={selectedCountry}
               onChange={(e) => setSelectedCountry(e.target.value)}
               className="input-field"
               required
             >
-              <option value="" disabled>Select a BRICS country</option>
+              <option value="" disabled>Select a BRICS Country</option>
               {countries.map((country) => (
                 <option key={country.value} value={country.value}>{country.label}</option>
               ))}
