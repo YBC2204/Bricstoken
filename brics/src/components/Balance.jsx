@@ -9,10 +9,10 @@ const Balance = () => {
         <h2 className="text-sm text-gray-400">Tokens</h2>
       </div>
       <div className="w-full">
-        <div className="bg-gray-800 p-4 rounded-lg mb-4">
-          <div className="flex justify-between items-center text-white">
-            <div>
-              <h3 className="text-lg font-bold">BRICS</h3>
+        <div className="bg-gray-800 p-4 rounded-lg mb-4 hover:border border-yellow-300 ">
+          <div className="flex justify-between items-center text-white hover:text-yellow-300">
+            <div className=''>
+              <h3 className="text-lg font-bold ">BRICS</h3>
               <p className="text-sm text-gray-400">Brics Token</p>
             </div>
             <div>
@@ -21,8 +21,8 @@ const Balance = () => {
             </div>
           </div>
         </div>
-        <div className="bg-gray-800 p-4 rounded-lg">
-          <div className="flex justify-between items-center text-white">
+        <div className="bg-gray-800 p-4 rounded-lg hover:border border-yellow-300">
+          <div className="flex justify-between items-center text-white hover:text-yellow-300">
             <div>
               <h3 className="text-lg font-bold">XLM</h3>
               <p className="text-sm text-gray-400">XLM Token</p>
@@ -36,7 +36,7 @@ const Balance = () => {
       </div>
       <div className="mt-4 w-full ">
        
-        <div className="text-blue-500 hover:underline"><AddIcon fontSize='sm'></AddIcon> Import tokens</div>
+        <div className="text-blue-500 hover:underline"><AddIcon fontSize=''></AddIcon> Import tokens</div>
   
         <div className="text-blue-500 hover:underline mt-2"><QuestionMarkIcon fontSize='sm'></QuestionMarkIcon>Brics support</div>
       </div>

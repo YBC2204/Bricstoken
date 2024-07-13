@@ -2,7 +2,7 @@ import BuyTokens from '../components/BuyTokens'
 import Balance from '../components/Balance'
 import Transaction from '../components/Transaction'
 import History from '../components/History'
-
+import Stock from '../components/Stock' 
 
 const Home = () => {
  
@@ -22,6 +22,9 @@ const Home = () => {
        </div>
        <div>
         <History/>
+       </div>
+       <div>
+        <Stock/>
        </div>
       </div>
      
