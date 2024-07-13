@@ -9,10 +9,10 @@ const Balance = () => {
         <h1 className="text-xl font-bold">Balance</h1>
         <h2 className="text-sm text-gray-400">Tokens</h2>
       </div>
-      <div className="w-full">
-        <div className="bg-gray-800 p-4 rounded-lg mb-4 hover:border border-yellow-300 ">
-          <div className="flex justify-between items-center text-white hover:text-yellow-300">
-            <div className=''>
+      <div className="w-full ">
+        <div className="bg-gray-800 p-4 rounded-lg mb-4 hover:border-2 border-yellow-300  ">
+          <div className="flex justify-between items-center  hover:text-yellow-300">
+            <div className='border-yellow-300'>
               <h3 className="text-lg font-bold ">BRICS</h3>
               <p className="text-sm text-gray-400">Brics Token</p>
             </div>
@@ -22,8 +22,8 @@ const Balance = () => {
             </div>
           </div>
         </div>
-        <div className="bg-gray-800 p-4 rounded-lg hover:border border-yellow-300">
-          <div className="flex justify-between items-center text-white hover:text-yellow-300">
+        <div className="bg-gray-800 p-4 rounded-lg hover:border-2 border-yellow-300">
+          <div className="flex justify-between items-center hover:text-yellow-300 ">
             <div>
               <h3 className="text-lg font-bold">XLM</h3>
               <p className="text-sm text-gray-400">XLM Token</p>

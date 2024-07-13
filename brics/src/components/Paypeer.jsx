@@ -1,25 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react'
 
-const BuyToken = () => {
+const Paypeer = () => {
   return (
-    <div className="btoken-container">
-    <div className="card" style={{ display:'flex',alignItems:'center',justifyContent:'center',backgroundColor: '#141519', padding: '20px', height:'50vh',borderRadius: '10px' }}>
+    <div>
+       <div className="btoken-container">
+    <div className="card  border border-white" style={{ display:'flex',alignItems:'center',justifyContent:'center',backgroundColor: '#141519', padding: '20px', height:'50vh',borderRadius: '10px' }}>
       {/* #7563ec */}
-        <div className="mb-3">
-        <select className=" drop-item center-item form-select" aria-label="Default select example">
-         <option selected>Select Country</option>
-        <option value="Brazil">Brazil</option>
-        <option value="Brazil">Russia</option>
-        <option value="India">India</option>
-        <option value="India">China</option>
-        <option value="South Africa">South Africa</option>
-        <option value="3">United Arab Emirates</option>
+        <div className="mb-3 ">
         
-        <option value="Iran">Iran</option>
-        <option value="Egypt">Egypt</option>
-        <option value="Ethopia">Ethopia</option>
-        <option value="Russia">Russia</option>
-</select>
           {/* <div className="dropdown drop-item center-item">
             <button name = "country"  className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             Select Country
@@ -36,8 +24,8 @@ const BuyToken = () => {
               <li><a className="dropdown-item">China</a></li>
             </ul>
           </div> */}
-          <label htmlFor="exampleInputEmail1" className="form-label center-item ">Enter Amount</label>
-          <div className="join">
+          <label htmlFor="exampleInputEmail1" className="form-label center-item font-bold ">Enter Amount</label>
+          <div className="join ">
             <div className="grow">
               <div className='center-item drop-item'>
                 <input id="amount" name="amount" className="input-bordered center-item input join-item ip-padding" type="text" placeholder="1.00" />
@@ -53,13 +41,14 @@ const BuyToken = () => {
           </div>
           {/* <input style={{width:'25%'}} className="input-field" type="n" placeholder="Email" /> */}
           <div className='center-item'>
-          <button type="button" className="btn btn-outline-danger center-item">Buy Now</button>
+          <button type="button" className="px-3 py-2 border-2  border-green-700 text-green-600 rounded-lg hover:bg-green-600 hover:text-white font-bold ">Buy Now</button>
           </div>
         </div>
      
     </div>
     </div>
-  );
-};
+    </div>
+  )
+}
 
-export default BuyToken;
+export default Paypeer

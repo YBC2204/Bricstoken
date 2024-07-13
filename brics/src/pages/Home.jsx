@@ -3,7 +3,7 @@ import Balance from '../components/Balance'
 import Transaction from '../components/Transaction'
 import History from '../components/History'
 import Stock from '../components/Stock' 
-
+import Paypeer from '../components/Paypeer'
 const Home = () => {
  
 
@@ -25,6 +25,9 @@ const Home = () => {
        </div>
        <div>
         <Stock/>
+       </div>
+       <div>
+        <Paypeer/>
        </div>
       </div>
      
