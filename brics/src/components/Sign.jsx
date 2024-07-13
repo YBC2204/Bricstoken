@@ -44,18 +44,18 @@ const Sign = () => {
   //     "country":selectedCountry,
   //     "password":password
   // }
-  console.log(formData);
+
     try {
       const response = await axios.post('http://localhost:3000/api/users/register', {
         "email":email,
         "country":selectedCountry,
         "password":password
     });
-      const token = response.data.token;
+      
       console.log(response.data);
       console.log(token);
       localStorage.setItem('token', token);
-      console.log(formData);
+    
       setRegistered(true);
     } catch (error) {
       console.error('Registration failed:', error);
@@ -73,16 +73,16 @@ const Sign = () => {
       // const FormData = new FormData();
       // formData.append('email', email);
       // formData.append('password', password);
-      const FormData ={
+      
+      // const storedToken = localStorage.getItem('token');
+      
+      const response = await axios.post('http://localhost:3000/api/users/login', {
         "email":email,
       "password":password
-      }
-      const storedToken = localStorage.getItem('token');
-      console.log(response.data);
-      console.log(storedToken);
-      const response = await axios.post('http://localhost:3000/api/users/login', FormData,{headers: {
-        'Authorization': `BEARER ${storedToken}`
-      }});
+      });
+      const token = response.data.token;
+      localStorage.setItem('token', token);
+      console.log(token);
       
       setLogin(true);
     } catch (error) {
@@ -182,5 +182,5 @@ const Sign = () => {
     </div>
   );
 };
-
+// export const EMAIL=email;
 export default Sign;

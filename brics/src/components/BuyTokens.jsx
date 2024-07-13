@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios'
+// import { EMAIL } from './Sign';
+
 
 const BuyToken = () => {
   const [amount, setAmount] = useState('');
@@ -9,13 +11,13 @@ const BuyToken = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const formData = new FormData();
-      formData.append('amount', amount);
-
-      const response = await axios.post('http://localhost:3000/api/token/buy-token', formData, {
+      const token = localStorage.getItem('token');
+     
+     console.log(token)
+      const response = await axios.post('http://localhost:3000/api/token/buy-token', {"amount":amount}, {
         headers: {
-          'Content-Type': 'multipart/form-data',
-        },
+          'Authorization': `Bearer ${token}`,
+        }
       });
       // Handle response
     } catch (error) {
