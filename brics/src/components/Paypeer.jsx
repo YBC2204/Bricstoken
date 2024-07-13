@@ -8,22 +8,6 @@ const Paypeer = () => {
       {/* #7563ec */}
         <div className="mb-3 ">
         
-          {/* <div className="dropdown drop-item center-item">
-            <button name = "country"  className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Select Country
-            </button>
-            <ul className="dropdown-menu">
-              <li><a className="dropdown-item" onClick={()=>{country.value="Brazil"}}>Brazil</a></li>
-              <li><a className="dropdown-item">India</a></li>
-              <li><a className="dropdown-item">United Arab Emirates</a></li>
-              <li><a className="dropdown-item">South Africa</a></li>
-              <li><a className="dropdown-item">Iran</a></li>
-              <li><a className="dropdown-item">Egypt</a></li>
-              <li><a className="dropdown-item">Ethopia</a></li>
-              <li><a className="dropdown-item">Russia</a></li>
-              <li><a className="dropdown-item">China</a></li>
-            </ul>
-          </div> */}
           <label htmlFor="exampleInputEmail1" className="form-label center-item font-bold ">Enter Amount</label>
           <div className="join ">
             <div className="grow">
