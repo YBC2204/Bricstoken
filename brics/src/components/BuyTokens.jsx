@@ -27,7 +27,7 @@ const BuyToken = () => {
   };
   return (
     <div className="btoken-container">
-    <div className="card" style={{ display:'flex',alignItems:'center',justifyContent:'center',backgroundColor: '#141519', padding: '20px', height:'50vh',borderRadius: '10px' }}>
+    <div className="card bg-gray-800" style={{ display:'flex',alignItems:'center',justifyContent:'center', padding: '20px', height:'50vh',borderRadius: '10px' }}>
       {/* #7563ec */}
         <div className="mb-3">
         <select className=" drop-item center-item form-select" aria-label="Default select example">
@@ -60,7 +60,7 @@ const BuyToken = () => {
               <li><a className="dropdown-item">China</a></li>
             </ul>
           </div> */}
-          <label htmlFor="exampleInputEmail1" className="form-label center-item">Enter Amount</label>
+          <label htmlFor="exampleInputEmail1" className="form-label center-item ">Enter Amount</label>
           <div className="join">
             <div className="grow">
               <div className='center-item drop-item'>
