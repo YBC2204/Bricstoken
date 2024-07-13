@@ -12,7 +12,7 @@ const Stock = () => {
   ];
 
   return (
-    <div className=" mx-auto px-4 sm:px-6 lg:px-8 mt-20">
+    <div className="  px-4  ">
       <h1 className="text-3xl font-bold text-center mb-20">INDIAN STOCK MARKET</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         {stocks.map((stock, index) => (

@@ -68,9 +68,7 @@ const Home = () => {
         <div ref={transactionRef}>
           <Transaction />
         </div>
-        <div ref={paypeerRef}>
-          <Paypeer />
-        </div>
+      
         <div ref={historyRef}>
           <History />
         </div>

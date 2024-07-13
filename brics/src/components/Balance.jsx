@@ -6,7 +6,7 @@ const Balance = () => {
   return (
     <div className="flex items-center justify-center h-screen  ">
       <div className="flex flex-col items-center justify-center bg-gray-900 p-4 rounded-lg shadow-lg w-[500px] h-[550] border border-white">
-        <div className="w-full text-center text-white mb-4">
+        <div className="w-full text-center text-white mb-4 ">
           <h1 className="text-xl font-bold">Balance</h1>
           <h2 className="text-sm text-gray-400">Tokens</h2>
         </div>
