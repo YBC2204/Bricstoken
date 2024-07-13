@@ -2,7 +2,7 @@ import React from 'react'
 
 const Balance = () => {
   return (
-    <div>Balancesdsdsbsdshbsbh</div>
+    <div>Balances- testing</div>
   )
 }
 
