@@ -1,10 +1,19 @@
 import React, { useState } from 'react';
 import './Sign.css';
-import axios from 'axios'; 
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const Sign = () => {
   const [isSignUp, setIsSignUp] = useState(false);
   const [selectedCountry, setSelectedCountry] = useState('');
+  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('');
+  const [error, setError] = useState('');
+  const [login, setLogin] = useState(false);
+  const [name, setName] = useState('');
+  const [registered, setRegistered] = useState(false);
+
+  const navigate = useNavigate();
 
   const handleToggle = () => {
     setIsSignUp(!isSignUp);
@@ -22,120 +31,115 @@ const Sign = () => {
     { value: 'ethiopia', label: 'Ethiopia' }
   ];
 
-  // http://localhost:3000/api/users/login
-  const [password, setPassword] = useState('');
-  const [email, setEmail] = useState('');
-  const [error, setError] = useState('');
-  const [login, setLogin] = useState(false);
-
-  const [name, setName] = useState('');
-
-  const [walletAddress, setWallet] = useState('');
-  const [registered, setRegistered] = useState(false);
-
   const registerfn = async (e) => {
     e.preventDefault();
+    const formData = new FormData();
+    formData.append('name', name);
+    formData.append('email', email);
+    formData.append('Country', selectedCountry);
+    formData.append('password', password);
+
     try {
-      const response = await axios.post('http://localhost:3000/api/users/register', {
-        name,
-        selectedCountry,
-        email,
-        positionInCourt
-      });
+      const response = await axios.post('http://localhost:3000/api/users/register', formData);
+      console.log(formData);
       setRegistered(true);
-      // const token = response.data.token;
-      // localStorage.setItem('token', token);
-      // Redirect user to another page or do something else after successful registration
-    }catch (error) {
-      console.error('Login failed:', error);
-      setError('Login failed. Please try again later.');
-    } 
-    
-    // catch (error) {
-    //   console.error('Registration failed:', error);
-    //   if (error.response && error.response.data && error.response.data.error) {
-    //     setError(error.response.data.error);
-    //   } else {
-    //     setError('Registration failed. Please try again later.');
-    //   }
-    // }
+    } catch (error) {
+      console.error('Registration failed:', error);
+      setError('Registration failed. Please try again later.');
+    }
   };
 
   if (registered) {
-    redirect('/login')
+    navigate('/login');
   }
 
   const loginfn = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3000/api/users/login', {
-         email,password
-      });
-      // Assuming your backend returns a token upon successful login
+      const formData = new FormData();
+      formData.append('email', email);
+      formData.append('password', password);
+      const response = await axios.post('http://localhost:3000/api/users/login', formData);
       const token = response.data.token;
-      console.log(token);
       localStorage.setItem('token', token);
       setLogin(true);
-      // Retrieve the token from local storage
-     // const storedToken = localStorage.getItem('token');
-      // You can store the token in local storage or a cookie for future requests
     } catch (error) {
-      console.error('Registration failed:', error);
-      if (error.response && error.response.data && error.response.data.error) {
-        setError(error.response.data.error);
-      } else {
-        setError('Registration failed. Please try again later.');
-      }
+      console.error('Login failed:', error);
+      setError('Login failed. Please try again later.');
     }
   };
 
-  if(login){
-    redirect("/home")
+  if (login) {
+    navigate("/home");
   }
+
   return (
     <div className="h-screen bg-white flex justify-center items-center">
       <div className={`container ${isSignUp ? 'right-panel-active' : ''}`}>
         <div className="form-container sign-up-container">
           <form className="bg-white p-6 rounded-lg" onSubmit={registerfn}>
             <h1 className="text-2xl font-bold mb-4">Create Account</h1>
-            <input 
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            className="input-field" type="text" placeholder="Name" />
-            <input 
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="input-field" type="email" placeholder="Email" />
+            <input
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              className="input-field"
+              type="text"
+              placeholder="Name"
+              required
+            />
+            <input
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="input-field"
+              type="email"
+              placeholder="Email"
+              required
+            />
             <select
               value={selectedCountry}
               onChange={(e) => setSelectedCountry(e.target.value)}
               className="input-field"
+              required
             >
               <option value="" disabled>Select a BRICS country</option>
               {countries.map((country) => (
                 <option key={country.value} value={country.value}>{country.label}</option>
               ))}
             </select>
-            <input 
-            value={password}
+            <input
+              value={password}
               onChange={(e) => setPassword(e.target.value)}
-            className="input-field" type="password" placeholder="Password" />
+              className="input-field"
+              type="password"
+              placeholder="Password"
+              required
+            />
             <button className="btn-primary" type="submit">Sign Up</button>
+            {error && <p className="text-red-500 mt-2">{error}</p>}
           </form>
         </div>
         <div className="form-container sign-in-container">
-          <form className="bg-white p-6 rounded-lg" onSubmit={loginfn} >
+          <form className="bg-white p-6 rounded-lg" onSubmit={loginfn}>
             <h1 className="text-3xl font-bold mb-4 text-black text-center p-4">Sign in</h1>
             <input
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="input-field" type="email" placeholder="Email" />
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="input-field"
+              type="email"
+              placeholder="Email"
+              required
+            />
             <input
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            className="input-field" type="password" placeholder="Password" />
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="input-field"
+              type="password"
+              placeholder="Password"
+              required
+            />
             <a className="text-blue-500 mb-4 block" href="/">Forgot your password?</a>
             <button className="btn-primary" type="submit">Sign In</button>
+            {error && <p className="text-red-500 mt-2">{error}</p>}
           </form>
         </div>
         <div className="overlay-container">
