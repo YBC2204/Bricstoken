@@ -33,14 +33,28 @@ const Sign = () => {
 
   const registerfn = async (e) => {
     e.preventDefault();
-    const formData = new FormData();
-    formData.append('name', name);
-    formData.append('email', email);
-    formData.append('Country', selectedCountry);
-    formData.append('password', password);
+    // const formData = new FormData();
+    // formData.append('name', name);
+    // formData.append('email', email);
+    // formData.append('Country', selectedCountry);
+    // formData.append('password', password);
 
+  //   let formData = {
+  //     "email":email,
+  //     "country":selectedCountry,
+  //     "password":password
+  // }
+  console.log(formData);
     try {
-      const response = await axios.post('http://localhost:3000/api/users/register', formData);
+      const response = await axios.post('http://localhost:3000/api/users/register', {
+        "email":email,
+        "country":selectedCountry,
+        "password":password
+    });
+      const token = response.data.token;
+      console.log(response.data);
+      console.log(token);
+      localStorage.setItem('token', token);
       console.log(formData);
       setRegistered(true);
     } catch (error) {
@@ -49,19 +63,27 @@ const Sign = () => {
     }
   };
 
-  if (registered) {
-    navigate('/login');
-  }
+  // if (registered) {
+  //   navigate('/login');
+  // }
 
   const loginfn = async (e) => {
     e.preventDefault();
     try {
-      const formData = new FormData();
-      formData.append('email', email);
-      formData.append('password', password);
-      const response = await axios.post('http://localhost:3000/api/users/login', formData);
-      const token = response.data.token;
-      localStorage.setItem('token', token);
+      // const FormData = new FormData();
+      // formData.append('email', email);
+      // formData.append('password', password);
+      const FormData ={
+        "email":email,
+      "password":password
+      }
+      const storedToken = localStorage.getItem('token');
+      console.log(response.data);
+      console.log(storedToken);
+      const response = await axios.post('http://localhost:3000/api/users/login', FormData,{headers: {
+        'Authorization': `BEARER ${storedToken}`
+      }});
+      
       setLogin(true);
     } catch (error) {
       console.error('Login failed:', error);
