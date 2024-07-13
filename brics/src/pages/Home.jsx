@@ -68,15 +68,16 @@ const Home = () => {
         <div ref={transactionRef}>
           <Transaction />
         </div>
+        <div ref={paypeerRef}>
+          <Paypeer />
+        </div>
         <div ref={historyRef}>
           <History />
         </div>
         <div ref={stockRef}>
           <Stock />
         </div>
-        <div ref={paypeerRef}>
-          <Paypeer />
-        </div>
+        
       </div>
     </div>
   );
