@@ -3,6 +3,7 @@ import QuestionMarkIcon from '@mui/icons-material/QuestionMark';
 import AddIcon from '@mui/icons-material/Add';
 const Balance = () => {
   return (
+
     <div className="flex flex-col items-center justify-center bg-gray-900 p-4 rounded-lg shadow-lg w-80 h-96 border border-white">
       <div className="w-full text-center text-white mb-4">
         <h1 className="text-xl font-bold">Balance</h1>
@@ -42,6 +43,7 @@ const Balance = () => {
       </div>
     </div>
   );
+
 }
 
 export default Balance;
