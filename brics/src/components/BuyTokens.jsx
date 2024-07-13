@@ -1,6 +1,30 @@
 import React, { useState } from 'react';
+import axios from 'axios'
+// import { EMAIL } from './Sign';
+
 
 const BuyToken = () => {
+  const [amount, setAmount] = useState('');
+
+  const [error, setError] = useState('');
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const token = localStorage.getItem('token');
+     
+     console.log(token)
+      const response = await axios.post('http://localhost:3000/api/token/buy-token', {"amount":amount}, {
+        headers: {
+          'Authorization': `Bearer ${token}`,
+        }
+      });
+      // Handle response
+    } catch (error) {
+      console.error('Buy Token failed:', error);
+      setError('Buy Token failed. Please try again later.');
+    }
+  };
   return (
     <div className="btoken-container">
     <div className="card bg-gray-800" style={{ display:'flex',alignItems:'center',justifyContent:'center', padding: '20px', height:'50vh',borderRadius: '10px' }}>
@@ -40,7 +64,9 @@ const BuyToken = () => {
           <div className="join">
             <div className="grow">
               <div className='center-item drop-item'>
-                <input id="amount" name="amount" className="input-bordered center-item input join-item ip-padding" type="text" placeholder="1.00" />
+                <input  
+                value={amount}
+                onChange={(e) => setAmount(e.target.value)} id="amount" name="amount" className="input-bordered center-item input join-item ip-padding" type="text" placeholder="1.00" />
               </div>
               {/* style={{ width: '50%' }} */}
             </div>
@@ -53,7 +79,7 @@ const BuyToken = () => {
           </div>
           {/* <input style={{width:'25%'}} className="input-field" type="n" placeholder="Email" /> */}
           <div className='center-item'>
-          <button type="button" className="btn btn-outline-danger center-item">Buy Now</button>
+          <button type="button" className="btn btn-outline-danger center-item" onClick={handleSubmit}>Buy Now</button>
           </div>
         </div>
      
