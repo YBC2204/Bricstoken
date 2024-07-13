@@ -3,11 +3,15 @@ import Balance from '../components/Balance'
 import Transaction from '../components/Transaction'
 import History from '../components/History'
 import Stock from '../components/Stock' 
+
+import Paypeer from '../components/Paypeer'
+
 import BalanceIcon from '@mui/icons-material/Balance';
 import CurrencyExchangeIcon from '@mui/icons-material/CurrencyExchange';
 import MultipleStopIcon from '@mui/icons-material/MultipleStop';
 import HistoryIcon from '@mui/icons-material/History';
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
+
 
 const Home = () => {
  
@@ -56,6 +60,9 @@ const Home = () => {
        </div>
        <div>
         <Stock/>
+       </div>
+       <div>
+        <Paypeer/>
        </div>
       </div>
      
