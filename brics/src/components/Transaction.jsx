@@ -136,28 +136,7 @@ const Transaction = () => {
         </div>
       )}
 
-    <div className="flex flex-col gap-4 px-4 py-5 mt-10 border-2 rounded-[20px] border-white bg-gray-900 mx-auto w-[50%]">
-      <div className="font-semibold uppercase text-2xl text-center">
-        Transaction
-      </div>
-      <div>
-        <div className="input-box flex items-center gap-1">
-          <Search color="primary" />
-          <input
-            type="search"
-            name="search-form"
-            id="search-form"
-            className="search-input p-2 text-black rounded-xl bg-gray-300 placeholder:text-black w-full"
-            onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search user"
-          />
-        </div>
-      </div>
-      <div className=" flex flex-col gap-2 px-4 py-2 rounded-xl"  ref={userContainerRef}>
-        <div className="text-xl font-semibold">Contacts</div>
-        <div className="flex flex-col gap-2 font-semibold">{renderUsers()}</div>
-        {selectedUser && proceedButton}
-      </div>
+    
 
     </div>
   );

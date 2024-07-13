@@ -28,8 +28,8 @@ const Home = () => {
 
   return (
     <div className='h-screen flex'>
-      <div className='fixed bg-gradient-to-br from-blue-900 to-slate-800 w-full sm:w-[20%] h-full flex flex-col gap-3 p-3'>
-        <div className='text-center text-white text-xl mb-3 font-bold'>BRICSPAY</div>
+      <div className='fixed bg-gradient-to-br from-slate-900 to-slate-800 w-full sm:w-[20%] h-full flex flex-col gap-3 p-3'>
+        <div className='text-center text-white text-2xl mb-5 mt-5 font-bold'>BRICSPAY</div>
         <div className='flex flex-col gap-3'>
           <div className={sideclass} onClick={() => scrollToRef(balanceRef)}>
             <BalanceIcon />
@@ -52,7 +52,11 @@ const Home = () => {
             <div>Stock</div>
           </div>
         </div>
-        <div className='mt-auto text-white text-center'>Footer</div>
+        <div className='mt-auto text-white text-center'>
+        <button className="bg-white hover:bg-green-700 text-black font-bold py-2 px-10 rounded">
+         Sign Out
+        </button>
+        </div>
       </div>
       <div className='flex flex-col text-white w-full sm:w-[80%] p-5 ml-[20%]' id='contents'>
         <div ref={balanceRef}>
