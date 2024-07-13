@@ -1,13 +1,31 @@
-import React, { useState } from 'react';
+import  { useEffect, useState } from 'react';
 import './Sign.css';
+import axios from "axios";
 
 const Sign = () => {
   const [isSignUp, setIsSignUp] = useState(false);
   const [selectedCountry, setSelectedCountry] = useState('');
-
+  const [data, setData] = useState("");
   const handleToggle = () => {
     setIsSignUp(!isSignUp);
   };
+
+
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await axios.post("http://localhost:3000/api/users/register", {
+  //         email: "ybcwork99@gmail.com"
+  //       });
+  //       setData(response.data);
+  //       console.log(data);
+  //     } catch (error) {
+  //       console.error("Error fetching data:", error);
+  //     }
+  //   };
+
+  //   fetchData();
+  // }, []);
 
   const countries = [
     { value: 'brazil', label: 'Brazil' },
@@ -22,7 +40,7 @@ const Sign = () => {
   ];
 
   return (
-    <div class="h-screen   bg-gradient-to-r from-slate-800 via-slate-900 to-black flex justify-center items-center">
+    <div className="h-screen   bg-gradient-to-r from-slate-800 via-slate-900 to-black flex justify-center items-center">
 
       <div className={`border border-white container ${isSignUp ? 'right-panel-active' : ''}`}>
         <div className="form-container sign-up-container">
@@ -35,7 +53,7 @@ const Sign = () => {
               onChange={(e) => setSelectedCountry(e.target.value)}
               className="input-field"
             >
-              <option value="" disabled>Select a BRICS country</option>
+              <option value="" disabled>Select a BRICS Country</option>
               {countries.map((country) => (
                 <option key={country.value} value={country.value}>{country.label}</option>
               ))}
