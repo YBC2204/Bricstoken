@@ -4,21 +4,21 @@ const History = () => {
   return (
     <>
         
-        <div className="h-screen btoken-container">
+        <div className="h-screen ">
         <div class="overflow-x-auto ">
-          <h3 className='drop-item'>Transaction History</h3> 
+          <h3 className='mt-10 mb-20 text-3xl uppercase font-bold tracking-widest text-center '>Transaction History</h3> 
        
         <table class="table-compact table ">
           <thead>
-            <tr>
-              <th>Amount</th>
-               <th>Asset</th> 
-               <th>Direction</th>
-                <th>Protocol</th>
-                 <th>Status</th> 
-                 <th>Date</th> 
-                 <th>More Info</th> 
-                 <th>Actions</th>
+            <tr >
+              <th  ><p className='text-purple-600'>Amount</p></th>
+               <th><p className='text-purple-600'>Asset</p></th> 
+               <th><p className='text-purple-600'>Direction</p></th>
+                <th><p className='text-purple-600'>Protocol</p></th>
+                 <th><p className='text-purple-600'>Status</p></th> 
+                 <th><p className='text-purple-600'>Date</p></th> 
+                 <th><p className='text-purple-600'>More Info</p></th> 
+                 <th><p className='text-purple-600'>Actions</p></th>
             </tr></thead> 
         <tbody>
         <tr>
