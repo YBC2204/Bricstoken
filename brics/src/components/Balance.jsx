@@ -51,7 +51,9 @@ const Balance = () => {
           <div className="flex flex-col items-center justify-center bg-gray-900 p-4 rounded-lg shadow-lg w-[500px] h-[550] border border-white">
           
         <div className="w-full text-center text-white mb-4 flex flex-col">
-              <h1 className="text-2xl font-bold">Balance</h1>
+
+              <h1 className="text-2xl font-bold tracking-widest uppercase">Balance</h1>
+
               <h2 className="text-sm text-gray-400">Tokens</h2>
              <div className='flex  font-semibold hover:cursor-pointer'  
              onClick={() => {
@@ -61,9 +63,9 @@ const Balance = () => {
         </div>
             </div>
             <div className="w-full">
-              <div className="bg-gray-800 p-4 rounded-lg mb-4 hover:border-2 border-yellow-300">
-                <div className="flex justify-between items-center hover:text-yellow-300">
-                  <div className='border-yellow-300'>
+              <div className="bg-gray-800 p-4 rounded-lg mb-4 hover:border-2 border-purple-600">
+                <div className="flex justify-between items-center hover:text-purple-600">
+                  <div className='border-purple-600'>
                     <h3 className="text-lg font-bold">BRICS</h3>
                     <p className="text-sm text-gray-400">Brics Token</p>
                   </div>
@@ -73,8 +75,8 @@ const Balance = () => {
                   </div>
                 </div>
               </div>
-              <div className="bg-gray-800 p-4 rounded-lg hover:border-2 border-yellow-300">
-                <div className="flex justify-between items-center hover:text-yellow-300">
+              <div className="bg-gray-800 p-4 rounded-lg hover:border-2 border-purple-600">
+                <div className="flex justify-between items-center hover:text-purple-600">
                   <div>
                     <h3 className="text-lg font-bold">XLM</h3>
                     <p className="text-sm text-gray-400">XLM Token</p>
