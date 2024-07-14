@@ -51,7 +51,9 @@ const Balance = () => {
           <div className="flex flex-col items-center justify-center bg-gray-900 p-4 rounded-lg shadow-lg w-[500px] h-[550] border border-white">
           
         <div className="w-full text-center text-white mb-4 flex flex-col">
+
               <h1 className="text-2xl font-bold tracking-widest uppercase">Balance</h1>
+
               <h2 className="text-sm text-gray-400">Tokens</h2>
              <div className='flex  font-semibold hover:cursor-pointer'  
              onClick={() => {
