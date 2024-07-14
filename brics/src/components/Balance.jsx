@@ -50,8 +50,8 @@ const Balance = () => {
       <div className="flex flex-col items-center justify-center bg-gray-900 p-4 rounded-lg shadow-lg w-[450px] h-[950] border-2 border-white">
         <div className="w-full text-center text-white mb-4 flex flex-col">
           <h1 className="text-3xl font-bold tracking-widest uppercase">Balance</h1>
-          <h2 className="text-sm text-gray-400">Tokens</h2>
-          <div className='flex items-center font-semibold hover:cursor-pointer hover:text-purple-600' onClick={() => { xmlbalancefn(); balancefn(); }}>
+          <h2 className="text-sm text-gray-400 mb-3">Tokens</h2>
+          <div className='flex items-center font-semibold hover:cursor-pointer hover:text-purple-600 justify-center' onClick={() => { xmlbalancefn(); balancefn(); }}>
             Refresh Balance <LoopIcon style={{ cursor: 'pointer' }} />
           </div>
         </div>
@@ -64,7 +64,7 @@ const Balance = () => {
               </div>
               <div>
                 <p className="text-lg font-bold">{balbric !== null ? `${balbric} BRICS` : 'Fetching...'}</p>
-                <p className="text-sm text-gray-400">{balbric !== null ? `$${(balbric * 0.41).toFixed(2)} USD` : '$0.41 USD'}</p>
+              
               </div>
             </div>
           </div>
@@ -76,7 +76,7 @@ const Balance = () => {
               </div>
               <div>
                 <p className="text-lg font-bold">{xml !== null ? `${xml} XLM` : 'Fetching...'}</p>
-                <p className="text-sm text-gray-400">$1.46 USD</p>
+                
               </div>
             </div>
           </div>

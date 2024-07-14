@@ -4,8 +4,8 @@ const History = () => {
   return (
     <>
         
-        <div className="btoken-container">
-        <div class="overflow-x-auto">
+        <div className="h-screen btoken-container">
+        <div class="overflow-x-auto ">
           <h3 className='drop-item'>Transaction History</h3> 
        
         <table class="table-compact table ">
