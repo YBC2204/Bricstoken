@@ -7,6 +7,7 @@ const BuyToken = () => {
   const [amount, setAmount] = useState('');
 
   const [error, setError] = useState('');
+  const[stat,setStat] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -19,6 +20,7 @@ const BuyToken = () => {
           'Authorization': `Bearer ${token}`,
         }
       });
+      setStat(response.message);
       // Handle response
     } catch (error) {
       console.error('Buy Token failed:', error);
@@ -81,6 +83,7 @@ const BuyToken = () => {
           <div className='center-item'>
           <button type="button" className="btn btn-outline-danger center-item" onClick={handleSubmit}>Buy Now</button>
           </div>
+         
         </div>
      
     </div>
