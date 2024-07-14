@@ -4,7 +4,6 @@ import axios from 'axios';
 const BuyToken = () => {
   const [amount, setAmount] = useState('');
   const [error, setError] = useState('');
-  const[stat,setStat] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -16,7 +15,6 @@ const BuyToken = () => {
           'Authorization': `Bearer ${token}`,
         }
       });
-      setStat(response.message);
       // Handle response
     } catch (error) {
       console.error('Buy Token failed:', error);
@@ -26,13 +24,13 @@ const BuyToken = () => {
 
   return (
     <div className="flex justify-center items-center min-h-screen ">
-      <div className="bg-gray-800 p-8 rounded-lg shadow-lg w-full max-w-md">
-        <h2 className="text-2xl font-semibold text-center text-white mb-4">Buy Token</h2>
+      <div className="bg-gray-800 p-8 rounded-lg shadow-lg w-full max-w-md border-2 border-white">
+        <h2 className="text-2xl font-semibold text-center text-white mb-4 tracking-widest uppercase">Buy Token</h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
-            <label htmlFor="country" className="block text-white mb-2">Select Country</label>
-            <select id="country" name="country" className="w-full p-2 rounded-md bg-gray-700 text-white">
-              <option value="" disabled>Select Country</option>
+            <label className=" text-white mb-2">Select Country</label>
+            <select id="" name="country" className="w-full p-2 rounded-md bg-gray-700 text-white">
+              <option value="" disabled selected>Select Country</option>
               <option value="Brazil">Brazil</option>
               <option value="Russia">Russia</option>
               <option value="India">India</option>
@@ -59,26 +57,19 @@ const BuyToken = () => {
           <div className="mb-4">
             <label htmlFor="asset" className="block text-white mb-2">Select Asset</label>
             <select id="asset" name="asset" className="w-full p-2 rounded-md bg-gray-700 text-white">
-              <option value="" disabled>Select Asset</option>
+              <option value="" disabled selected>Select Asset</option>
               <option value="native">XLM</option>
               <option value="native">BRIC</option>
             </select>
           </div>
           {error && <p className="text-red-500 text-center mb-4">{error}</p>}
           <div className="flex justify-center">
-            <button type="submit" className="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 transition duration-300">
+            <button type="submit" className="px-4 py-2 bg-purple-700 text-white rounded-md hover:bg-green-700 transition duration-300">
               Buy Now
             </button>
           </div>
-<<<<<<< HEAD
         </form>
       </div>
-=======
-         
-        </div>
-     
-    </div>
->>>>>>> 041b829a349178da4f04cf3ca08289f590eff82a
     </div>
   );
 };

@@ -83,7 +83,7 @@ const Transaction = () => {
 
     <div className={`relative ${proceed ? "bg-black bg-opacity-50" : ""}`}>
       <div className="flex flex-col gap-4 px-4 py-5 mt-10 border-2 rounded-[20px] border-white bg-gray-900 mx-auto w-[50%]">
-        <div className="font-semibold uppercase text-2xl text-center">
+        <div className="font-semibold uppercase text-2xl text-center tracking-widest">
           Transaction
         </div>
         <div>
