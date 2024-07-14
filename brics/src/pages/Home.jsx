@@ -34,27 +34,27 @@ const Home = () => {
       <div className='fixed bg-gradient-to-br from-slate-900 to-slate-800 w-full sm:w-[20%] h-full flex flex-col gap-3 p-3'>
         <div className='text-center text-white text-4xl mb-5 mt-5 font-bold'>ßRICSPAY</div>
         <div className='flex flex-col gap-3'>
-          <div className={`${sideclass} ${selected === 'Balance' ? 'border-b-4 border-purple-600' : ''}`} onClick={() => scrollToRef(balanceRef, 'Balance')}>
+          <div className={`${sideclass} ${selected === 'Balance' ? 'border-b-4 border-purple-600 text-purple-600' : ''}`} onClick={() => scrollToRef(balanceRef, 'Balance')}>
             <BalanceIcon />
             <div>Balance</div>
           </div>
-          <div className={`${sideclass} ${selected === 'BuyTokens' ? 'border-b-4 border-purple-600' : ''}`} onClick={() => scrollToRef(buyTokensRef, 'BuyTokens')}>
+          <div className={`${sideclass} ${selected === 'BuyTokens' ? 'border-b-4 border-purple-600 text-purple-600' : ''}`} onClick={() => scrollToRef(buyTokensRef, 'BuyTokens')}>
             <CurrencyExchangeIcon />
             <div>Buy Tokens</div>
           </div>
-          <div className={`${sideclass} ${selected === 'Transaction' ? 'border-b-4 border-purple-600' : ''}`} onClick={() => scrollToRef(transactionRef, 'Transaction')}>
+          <div className={`${sideclass} ${selected === 'Transaction' ? 'border-b-4 border-purple-600 text-purple-600' : ''}`} onClick={() => scrollToRef(transactionRef, 'Transaction')}>
             <MultipleStopIcon />
             <div>Transaction</div>
           </div>
-          <div className={`${sideclass} ${selected === 'History' ? 'border-b-4 border-purple-600' : ''}`} onClick={() => scrollToRef(historyRef, 'History')}>
+          <div className={`${sideclass} ${selected === 'History' ? 'border-b-4 border-purple-600 text-purple-600' : ''}`} onClick={() => scrollToRef(historyRef, 'History')}>
             <HistoryIcon />
             <div>History</div>
           </div>
-          <div className={`${sideclass} ${selected === 'Stock' ? 'border-b-4 border-purple-600' : ''}`} onClick={() => scrollToRef(stockRef, 'Stock')}>
+          <div className={`${sideclass} ${selected === 'Stock' ? 'border-b-4 border-purple-600 text-purple-600' : ''}`} onClick={() => scrollToRef(stockRef, 'Stock')}>
             <TrendingUpIcon />
             <div>Stock</div>
           </div>
-          <div className={`${sideclass} ${selected === 'Swap' ? 'border-b-4 border-purple-600' : ''}`} onClick={() => scrollToRef(swapRef, 'Swap')}>
+          <div className={`${sideclass} ${selected === 'Swap' ? 'border-b-4 border-purple-600 text-purple-600' : ''}`} onClick={() => scrollToRef(swapRef, 'Swap')}>
             <SwapVertIcon />
             <div>Swap</div>
           </div>
