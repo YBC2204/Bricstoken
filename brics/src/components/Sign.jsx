@@ -59,8 +59,8 @@ const Sign = () => {
     });
       
       console.log(response.data);
-      console.log(token);
-      localStorage.setItem('token', token);
+      //console.log(token);
+      //localStorage.setItem('token', token);
     
       setRegistered(true);
     } catch (error) {
@@ -104,7 +104,7 @@ const Sign = () => {
   return (
     <div className="h-screen   bg-gradient-to-r from-slate-800 via-slate-900 to-black flex justify-center items-center">
 
-      <div className={`border border-white container ${isSignUp ? 'right-panel-active' : ''}`}>
+      <div className={`border border-white w-3/4 container ${isSignUp ? 'right-panel-active' : ''}`}>
         <div className="form-container sign-up-container">
 
           <form className="bg-white p-6 rounded-lg" onSubmit={registerfn}>

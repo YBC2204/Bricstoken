@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import {useNavigate} from 'react-router-dom'
 import BuyTokens from '../components/BuyTokens';
 import Balance from '../components/Balance';
 import Transaction from '../components/Transaction';
@@ -19,6 +20,7 @@ const Home = () => {
   const historyRef = useRef(null);
   const stockRef = useRef(null);
   const paypeerRef = useRef(null);
+  const nav = useNavigate(); 
 
   const sideclass = "flex items-center gap-2 p-3 bg-gray-800 hover:bg-gray-700 rounded-md hover:underline hover:cursor-pointer";
 
@@ -29,7 +31,7 @@ const Home = () => {
   return (
     <div className='h-screen flex'>
       <div className='fixed bg-gradient-to-br from-slate-900 to-slate-800 w-full sm:w-[20%] h-full flex flex-col gap-3 p-3'>
-        <div className='text-center text-white text-2xl mb-5 mt-5 font-bold'>BRICSPAY</div>
+        <div className='text-center text-white text-2xl mb-5 mt-5 font-bold'>ßRICSPAY</div>
         <div className='flex flex-col gap-3'>
           <div className={sideclass} onClick={() => scrollToRef(balanceRef)}>
             <BalanceIcon />
@@ -53,7 +55,7 @@ const Home = () => {
           </div>
         </div>
         <div className='mt-auto text-white text-center'>
-        <button className="bg-white hover:bg-green-700 text-black font-bold py-2 px-10 rounded">
+        <button className="bg-white hover:bg-green-700 text-black font-bold py-2 px-10 rounded" onClick={()=>nav('/')}>
          Sign Out
         </button>
         </div>
@@ -68,9 +70,7 @@ const Home = () => {
         <div ref={transactionRef}>
           <Transaction />
         </div>
-        <div ref={paypeerRef}>
-          <Paypeer />
-        </div>
+      
         <div ref={historyRef}>
           <History />
         </div>
