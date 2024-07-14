@@ -108,11 +108,11 @@ const Sign = () => {
         <div className="form-container sign-up-container">
 
           <form className="bg-white p-6 rounded-lg" onSubmit={registerfn}>
-            <h1 className="text-2xl font-bold mb-4">Create Account</h1>
+            <h1 className="text-2xl font-bold mb-4 text-black">Create Account</h1>
             <input
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="input-field"
+              className="input-field "
               type="text"
               placeholder="Name"
               required

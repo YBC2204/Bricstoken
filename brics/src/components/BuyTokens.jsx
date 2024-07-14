@@ -1,77 +1,91 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import axios from 'axios'
+// import { EMAIL } from './Sign';
+
 
 const BuyToken = () => {
   const [amount, setAmount] = useState('');
+
   const [error, setError] = useState('');
-  const[stat,setStat] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const token = localStorage.getItem('token');
-      console.log(token);
-      const response = await axios.post('http://localhost:3000/api/token/buy-token', { amount }, {
+     
+     console.log(token)
+      const response = await axios.post('http://localhost:3000/api/token/buy-token', {"amount":amount}, {
         headers: {
           'Authorization': `Bearer ${token}`,
         }
       });
-      setStat(response.message);
+      alert("BRIC Token Purchase Successful"); 
       // Handle response
     } catch (error) {
       console.error('Buy Token failed:', error);
       setError('Buy Token failed. Please try again later.');
     }
   };
-
   return (
-    <div className="flex justify-center items-center min-h-screen ">
-      <div className="bg-gray-800 p-8 rounded-lg shadow-lg w-full max-w-md">
-        <h2 className="text-2xl font-semibold text-center text-white mb-4">Buy Token</h2>
-        <form onSubmit={handleSubmit}>
-          <div className="mb-4">
-            <label htmlFor="country" className="block text-white mb-2">Select Country</label>
-            <select id="country" name="country" className="w-full p-2 rounded-md bg-gray-700 text-white">
-              <option value="" disabled>Select Country</option>
-              <option value="Brazil">Brazil</option>
-              <option value="Russia">Russia</option>
-              <option value="India">India</option>
-              <option value="China">China</option>
-              <option value="South Africa">South Africa</option>
-              <option value="United Arab Emirates">United Arab Emirates</option>
-              <option value="Iran">Iran</option>
-              <option value="Egypt">Egypt</option>
-              <option value="Ethiopia">Ethiopia</option>
-            </select>
-          </div>
-          <div className="mb-4">
-            <label htmlFor="amount" className="block text-white mb-2">Enter Amount</label>
-            <input
-              value={amount}
-              onChange={(e) => setAmount(e.target.value)}
-              id="amount"
-              name="amount"
-              className="w-full p-2 rounded-md bg-gray-700 text-white"
-              type="text"
-              placeholder="1.00"
-            />
-          </div>
-          <div className="mb-4">
-            <label htmlFor="asset" className="block text-white mb-2">Select Asset</label>
-            <select id="asset" name="asset" className="w-full p-2 rounded-md bg-gray-700 text-white">
-              <option value="" disabled>Select Asset</option>
-              <option value="native">XLM</option>
-              <option value="native">BRIC</option>
-            </select>
-          </div>
-          {error && <p className="text-red-500 text-center mb-4">{error}</p>}
-          <div className="flex justify-center">
-            <button type="submit" className="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 transition duration-300">
-              Buy Now
+    <div className="btoken-container">
+    <div className="card bg-gray-800" style={{ display:'flex',alignItems:'center',justifyContent:'center', padding: '20px', height:'50vh',borderRadius: '10px' }}>
+      {/* #7563ec */}
+        <div className="mb-3">
+        <select className=" drop-item center-item form-select" aria-label="Default select example">
+         <option selected>Select Country</option>
+        <option value="Brazil">Brazil</option>
+        <option value="Brazil">Russia</option>
+        <option value="India">India</option>
+        <option value="India">China</option>
+        <option value="South Africa">South Africa</option>
+        <option value="3">United Arab Emirates</option>
+        
+        <option value="Iran">Iran</option>
+        <option value="Egypt">Egypt</option>
+        <option value="Ethopia">Ethopia</option>
+        <option value="Russia">Russia</option>
+</select>
+          {/* <div className="dropdown drop-item center-item">
+            <button name = "country"  className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Select Country
             </button>
+            <ul className="dropdown-menu">
+              <li><a className="dropdown-item" onClick={()=>{country.value="Brazil"}}>Brazil</a></li>
+              <li><a className="dropdown-item">India</a></li>
+              <li><a className="dropdown-item">United Arab Emirates</a></li>
+              <li><a className="dropdown-item">South Africa</a></li>
+              <li><a className="dropdown-item">Iran</a></li>
+              <li><a className="dropdown-item">Egypt</a></li>
+              <li><a className="dropdown-item">Ethopia</a></li>
+              <li><a className="dropdown-item">Russia</a></li>
+              <li><a className="dropdown-item">China</a></li>
+            </ul>
+          </div> */}
+          <label htmlFor="exampleInputEmail1" className="form-label center-item ">Enter Amount</label>
+          <div className="join">
+            <div className="grow">
+              <div className='center-item drop-item'>
+                <input  
+                value={amount}
+                onChange={(e) => setAmount(e.target.value)} id="amount" name="amount" className="input-bordered center-item input join-item ip-padding" type="text" placeholder="1.00" />
+              </div>
+              {/* style={{ width: '50%' }} */}
+            </div>
+            <div className='center-item drop-item'>
+              
+            <select id="asset" name="asset" className="select-bordered select join-item ip-padding">
+              <option value="" disabled="">Select Asset</option>
+              {/* <option value="native">XLM</option> */}
+              <option value="native">BRIC</option>
+            </select></div>
           </div>
-        </form>
-      </div>
+          {/* <input style={{width:'25%'}} className="input-field" type="n" placeholder="Email" /> */}
+          <div className='center-item'>
+          <button type="button" className="btn btn-outline-danger center-item" onClick={handleSubmit}>Buy Now</button>
+          </div>
+        </div>
+     
+    </div>
     </div>
   );
 };
