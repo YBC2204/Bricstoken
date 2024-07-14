@@ -94,12 +94,12 @@ Additional Resources:
 * React Tutorial: [https://legacy.reactjs.org/docs/getting-started.html](https://legacy.reactjs.org/docs/getting-started.html)
 * Node.js and npm: [https://nodejs.org/en](https://nodejs.org/en)
 * Stellar Javascript SDK: [https://github.com/stellar/js-stellar-sdk](https://github.com/stellar/js-stellar-sdk)
-* Stellar Wallet Creation :[https://developers.stellar.org/docs/build/apps/wallet/intro]
+* Stellar Wallet Creation :[https://developers.stellar.org/docs/build/apps/wallet/intro](https://developers.stellar.org/docs/build/apps/wallet/intro)
 
 
 
 Team Members
-Jijo Johny ([https://github.com/JijoJohny])
-Anson Antony ([https://github.com/ansonantony])
-Yadhu Krishnan B C ([https://github.com/YBC2204])
-Parveen Navas ([https://github.com/parveennavas])
+Jijo Johny [https://github.com/JijoJohny](https://github.com/JijoJohny)
+Anson Antony [https://github.com/ansonantony](https://github.com/ansonantony)
+Yadhu Krishnan B C [https://github.com/YBC2204](https://github.com/YBC2204)
+Parveen Navas [https://github.com/parveennavas]([https://github.com/parveennavas])
