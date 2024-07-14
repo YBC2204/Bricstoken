@@ -1,9 +1,10 @@
 # Bricstoken
-BRICS Pay: A Proposed International Payment System for BRICS Economies
-
+<h1>BRICS Pay:</h1> 
+ A Proposed International Payment System for BRICS Economies
+<br/>
 BRICS Pay is a proposed payment system designed for member countries of the BRICS economy. It aims to facilitate international trade and transactions between them, reducing reliance on the US dollar and current messaging systems like SWIFT.
 
-Features
+<h2>Features</h2>
 
 BRICS Pay offers a variety of features designed to make cross-border transactions within BRICS countries secure, convenient, and cost-effective.
 
