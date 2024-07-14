@@ -1,4 +1,3 @@
-Sure! Here's a more formatted and prettified version of your README.md:
 
 ```markdown
 # BRICS Pay: A Proposed International Payment System for BRICS Economies
@@ -115,4 +114,3 @@ BRICS Pay offers a variety of features designed to make cross-border transaction
 - **Parveen Navas:** [GitHub](https://github.com/parveennavas)
 ```
 
-This version adds headings, bullet points, underlines, and other formatting to make the content more readable and visually appealing.
