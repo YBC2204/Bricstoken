@@ -1,18 +1,19 @@
-import  { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Search } from "@mui/icons-material";
 import axios from 'axios';
 import CloseIcon from '@mui/icons-material/Close';
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
+
 const Transaction = () => {
   const [query, setQuery] = useState("");
   const [selectedUser, setSelectedUser] = useState(null); // State to track selected user
-
   const [proceed, setProceed] = useState(false); // State to track proceed action
+  const [mail, setMail] = useState("");
+  const [amt, setAmt] = useState("");
+  const [error, setError] = useState("");
 
   const userContainerRef = useRef(null);
-  const [mail,setmail] =useState("");
-  const [amt,setamt] =useState("");
-  const[error,setError] = useState("");
+
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (userContainerRef.current && !userContainerRef.current.contains(event.target)) {
@@ -26,52 +27,42 @@ const Transaction = () => {
     };
   }, []);
 
-
-
   const users = ["anjanakj000@gmail.com", "parveen123@gmail.com", "jijojohny13@gmail.com", "anson210@gmail.com"];
 
   const renderUsers = () => {
-    
     return users.map((user) => (
-      
       <button
         key={user}
-
-        className={`user-item bg-slate-800 p-3 rounded-md hover:border-b hover:scale-105 hover:cursor-pointer ${
-          selectedUser === user ? "bg-slate-500  text-purple-600 scale-105 border-b" : ""
-
-
+        className={`user-item bg-slate-800 p-3 rounded-md hover:border-b border-purple-600 hover:scale-105 hover:cursor-pointer ${
+          selectedUser === user ? "bg-slate-500  text-purple-600 scale-105 border-b border-purple-600" : ""
         }`}
         onClick={() => {
           setSelectedUser(user);
-          setmail(user);}}
+          setMail(user);
+        }}
       >
         {user}
       </button>
     ));
   };
 
-
   const handleProceedClick = () => {
     setProceed(true);
   };
 
- 
-
-  const handleProceed = async (e) => {
-    //e.preventDefault();
-  console.log(amt);
-   console.log(mail); 
-  try {
+  const handleProceed = async () => {
+    try {
       const token = localStorage.getItem('token');
-     
-     console.log(token)
-      const response = await axios.post('http://localhost:3000/api/token/transactions', {"email":mail,"amount":amt},
-       { headers: {
-          'authorization': `Bearer ${token}`,
+      const response = await axios.post(
+        'http://localhost:3000/api/token/transactions',
+        { "email": mail, "amount": amt },
+        {
+          headers: {
+            'authorization': `Bearer ${token}`,
+          }
         }
-      });
-      console.log(response)
+      );
+      console.log(response.data);
       // Handle response
     } catch (error) {
       console.error('Buy Token failed:', error);
@@ -80,12 +71,9 @@ const Transaction = () => {
   };
 
   return (
-
-
-    <div className={`relative h-screen${proceed ? "bg-black bg-opacity-50" : ""}`}>
-      <div className="flex flex-col gap-4 px-4 py-5 mt-10 border-2 rounded-[20px] border-white bg-gray-900  mx-auto w-[50%]">
+    <div className={`relative h-screen ${proceed ? "bg-black bg-opacity-50" : ""}`}>
+      <div className="flex flex-col justify-center ali gap-4 px-4 py-5 mt-20 border-2 rounded-[20px] border-white bg-gray-900 mx-auto w-[50%]">
         <div className="font-bold uppercase text-3xl text-center tracking-widest">
-
           Transaction
         </div>
         <div>
@@ -114,43 +102,50 @@ const Transaction = () => {
           )}
         </div>
       </div>
-      {proceed && (
+
+      {!proceed && (
         <div className="bg-black bg-opacity-50 absolute inset-0 flex items-center justify-center ">
-          <div className="btoken-container ">
-          
-            <div className="bg-gray-800 relative" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '110px', height: '60vh', borderRadius: '10px' }}>
-            <div className="absolute top-2 right-4" onClick={()=>setProceed(false)}><CloseIcon fontSize="large" color=""/></div>
-            <div className="mb-3">
-                <label htmlFor="exampleInputEmail1" className="form-label center-item font-bold text-xl">Enter Amount</label>
-                <div className="join">
-                  <div className="grow">
-                    <div className='center-item drop-item'>
-                      <input id="amount" name="amount" className="center-item input join-item ip-padding" type="text" placeholder="" 
-                        value={amt}
-                        onChange={(e) => setamt(e.target.value)}
-                      />
-                    </div>
-                  </div>
-                  <div className='center-item drop-item'>
-                    <select id="asset" name="asset" className="select-bordered select join-item ip-padding">
-                      <option value="" disabled>Select Asset</option>
-                      <option value="native">XLM</option>
-                      <option value="native">BRIC</option>
-                    </select>
-                  </div>
+          <div className="btoken-container">
+            <div className="bg-gray-800 relative border-2 border-purple-600 p-8 rounded-lg" style={{ width: '50%', height: '400px' }}>
+              <div className="absolute top-2 right-4">
+                <CloseIcon fontSize="large" color=""/>
+              </div>
+              <div className="mb-3">
+                <label htmlFor="" className="font-bold text-xl text-white uppercase mb-10">Enter Amount</label>
+                <div className="flex flex-col gap-2">
+                  <input
+                    id="amount"
+                    name="amount"
+                    className="input join-item ip-padding bg-slate-300 rounded-lg"
+                    type="text"
+                    placeholder=""
+                    value={amt}
+                    onChange={(e) => setAmt(e.target.value)}
+                  />
+                  <select
+                    id="asset"
+                    name="asset"
+                    className="select join-item ip-padding bg-slate-300 rounded-lg"
+                  >
+                    <option value="" disabled>Select Asset</option>
+                    <option value="native">XLM</option>
+                    <option value="native">BRIC</option>
+                  </select>
                 </div>
-                <div className='center-item'>
-                  <button type="button" className=" flex gap-1 px-3 py-2 border-2 border-green-700 text-green-600 rounded-lg hover:bg-green-600 hover:text-white font-bold"
-                  onClick={()=> handleProceed()}>Send<ArrowOutwardIcon/></button>
-                </div>
+              </div>
+              <div className="flex justify-center">
+                <button
+                  type="button"
+                  className="flex gap-1 px-3 py-2 border-2 border-green-700 text-green-600 rounded-lg hover:bg-green-600 hover:text-white font-bold"
+                  onClick={handleProceed}
+                >
+                  Send <ArrowOutwardIcon />
+                </button>
               </div>
             </div>
           </div>
         </div>
       )}
-
-
-
     </div>
   );
 };
