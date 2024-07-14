@@ -84,7 +84,7 @@ const Sign = () => {
       
       const response = await axios.post('http://localhost:3000/api/users/login', {
         "email":email,
-      "password":password
+        "password":password
       });
       const token = response.data.token;
       localStorage.setItem('token', token);
@@ -137,6 +137,7 @@ const Sign = () => {
                 <option key={country.value} value={country.value}>{country.label}</option>
               ))}
             </select>
+
             <input
               value={password}
               onChange={(e) => setPassword(e.target.value)}
@@ -145,8 +146,11 @@ const Sign = () => {
               placeholder="Password"
               required
             />
+            
             <button className="btn-primary" type="submit">Sign Up</button>
+            
             {error && <p className="text-red-500 mt-2">{error}</p>}
+          
           </form>
         </div>
         <div className="form-container sign-in-container">
