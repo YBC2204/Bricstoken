@@ -98,8 +98,9 @@ Additional Resources:
 
 
 
-Team Members
-Jijo Johny [https://github.com/JijoJohny](https://github.com/JijoJohny)
-Anson Antony [https://github.com/ansonantony](https://github.com/ansonantony)
-Yadhu Krishnan B C [https://github.com/YBC2204](https://github.com/YBC2204)
-Parveen Navas [https://github.com/parveennavas]([https://github.com/parveennavas])
+Team Members:
+
+* Jijo Johny [https://github.com/JijoJohny](https://github.com/JijoJohny)
+* Anson Antony [https://github.com/ansonantony](https://github.com/ansonantony)
+* Yadhu Krishnan B C [https://github.com/YBC2204](https://github.com/YBC2204)
+* Parveen Navas [https://github.com/parveennavas](https://github.com/parveennavas)
