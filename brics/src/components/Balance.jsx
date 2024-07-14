@@ -53,7 +53,7 @@ const Balance = () => {
         <div className="w-full text-center text-white mb-4 flex flex-col">
               <h1 className="text-2xl font-bold tracking-widest uppercase">Balance</h1>
               <h2 className="text-sm text-gray-400">Tokens</h2>
-             <div className='flex  font-semibold hover:cursor-pointer'  
+             <div className='flex  font-semibold hover:cursor-pointer hover:text-purple-600'  
              onClick={() => {
           xmlbalancefn();
           balancefn();
@@ -87,8 +87,8 @@ const Balance = () => {
               </div>
             </div>
             <div className="mt-4 w-full">
-              <div className="text-blue-500 hover:underline"><AddIcon fontSize='small'></AddIcon> Import tokens</div>
-              <div className="text-blue-500 hover:underline mt-2"><QuestionMarkIcon fontSize='small'></QuestionMarkIcon>Brics support</div>
+              <div className="text-purple-600 hover:underline"><AddIcon fontSize='small'></AddIcon> Import tokens</div>
+              <div className="text-purple-600 hover:underline mt-2"><QuestionMarkIcon fontSize='small'></QuestionMarkIcon>Brics support</div>
             </div>
           </div>
         </div>

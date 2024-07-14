@@ -38,7 +38,7 @@ const Transaction = () => {
         key={user}
 
         className={`user-item bg-slate-800 p-3 rounded-md hover:border-b hover:scale-105 hover:cursor-pointer ${
-          selectedUser === user ? "bg-slate-500  text-white scale-105 border-b" : ""
+          selectedUser === user ? "bg-slate-500  text-purple-600 scale-105 border-b" : ""
 
 
         }`}
@@ -81,14 +81,14 @@ const Transaction = () => {
 
   return (
 
-    <div className={`relative ${proceed ? "bg-black bg-opacity-50" : ""}`}>
+    <div className={`relative ${proceed ? "bg-gray-900" : ""}`}>
       <div className="flex flex-col gap-4 px-4 py-5 mt-10 border-2 rounded-[20px] border-white bg-gray-900 mx-auto w-[50%]">
         <div className="font-semibold uppercase text-2xl text-center tracking-widest">
           Transaction
         </div>
         <div>
           <div className="input-box flex items-center gap-1">
-            <Search color="primary" />
+            <Search color="" />
             <input
               type="search"
               name="search-form"
@@ -104,7 +104,7 @@ const Transaction = () => {
           <div className="flex flex-col gap-2 font-semibold">{renderUsers()}</div>
           {selectedUser && (
             <button
-              className="proceed-button bg-blue-500 text-white px-4 py-2 rounded-md mt-2"
+              className="proceed-button bg-purple-600 text-white px-4 py-2 rounded-md mt-2"
               onClick={handleProceedClick}
             >
               Proceed
