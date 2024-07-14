@@ -54,7 +54,7 @@ const BuyToken = () => {
               name="amount"
               className="w-full p-2 rounded-md bg-gray-700 text-white"
               type="text"
-              placeholder="1.00"
+              placeholder=""
             />
           </div>
           <div className="mb-4">
@@ -68,7 +68,7 @@ const BuyToken = () => {
           </div>
           {error && <p className="text-red-500 text-center mb-4">{error}</p>}
           <div className="flex justify-center">
-            <button type="submit" className="px-4 py-2 bg-purple-700 text-white rounded-md hover:bg-green-700 transition duration-300">
+            <button type="submit" className="px-4 py-2 bg-purple-700 text-white rounded-md hover:bg-purple-700 transition duration-300">
               Buy Now
             </button>
           </div>

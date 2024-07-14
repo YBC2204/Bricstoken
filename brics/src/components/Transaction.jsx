@@ -103,20 +103,20 @@ const Transaction = () => {
         </div>
       </div>
 
-      {!proceed && (
+      {proceed && (
         <div className="bg-black bg-opacity-50 absolute inset-0 flex items-center justify-center ">
           <div className="btoken-container">
-            <div className="bg-gray-800 relative border-2 border-purple-600 p-8 rounded-lg" style={{ width: '50%', height: '400px' }}>
+            <div className="bg-gray-800 relative bottom-0 border-2 border-purple-600 p-8 rounded-lg" style={{ width: '28%', height: '320px' }}>
               <div className="absolute top-2 right-4">
-                <CloseIcon fontSize="large" color=""/>
+                <CloseIcon fontSize="medium" color="" onClick={()=>setProceed(false)}/>
               </div>
               <div className="mb-3">
-                <label htmlFor="" className="font-bold text-xl text-white uppercase mb-10">Enter Amount</label>
-                <div className="flex flex-col gap-2">
+                <label htmlFor="" className="font-bold text-xl text-white ml-8 uppercase mb-10">Enter Amount</label>
+                <div className="flex flex-col gap-2 ">
                   <input
                     id="amount"
                     name="amount"
-                    className="input join-item ip-padding bg-slate-300 rounded-lg"
+                    className="input join-item ip-padding bg-slate-400 rounded-lg"
                     type="text"
                     placeholder=""
                     value={amt}
@@ -133,10 +133,10 @@ const Transaction = () => {
                   </select>
                 </div>
               </div>
-              <div className="flex justify-center">
+              <div className="mt-5 flex justify-center">
                 <button
                   type="button"
-                  className="flex gap-1 px-3 py-2 border-2 border-green-700 text-green-600 rounded-lg hover:bg-green-600 hover:text-white font-bold"
+                  className="flex gap-1 px-3 py-2 border-2 border-blue-600 text-blue-700 rounded-lg hover:bg-blue-600 hover:text-white font-bold"
                   onClick={handleProceed}
                 >
                   Send <ArrowOutwardIcon />
