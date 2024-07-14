@@ -18,7 +18,9 @@ const Stockcard = ({ id, company, price, stname }) => {
         { companyId: id, stockName: stname, quantity: "1" },
         {
           headers: {
-            'Authorization':` Bearer ${token}`,
+
+            'Authorization': `Bearer ${token}`,
+
           },
         }
       );
@@ -36,11 +38,13 @@ const Stockcard = ({ id, company, price, stname }) => {
       <div className="flex justify-between mb-4">
 
         <div className="font-bold text-xl">{company}</div>
+
         <div className="font-bold text-lg text-purple-600">{stname}</div>
       </div>
       <div className="text-center">
         <div className="text-3xl font-bold">{price} ß</div>
         <button onClick={buystocksfn} className="mt-3 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+
 
       
           Buy Now

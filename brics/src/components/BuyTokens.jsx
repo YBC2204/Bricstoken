@@ -15,6 +15,7 @@ const BuyToken = () => {
           'Authorization': `Bearer ${token}`,
         }
       });
+      alert("BRIC Token Purchase Successful"); 
       // Handle response
     } catch (error) {
       console.error('Buy Token failed:', error);
@@ -23,6 +24,8 @@ const BuyToken = () => {
   };
 
   return (
+
+
     <div className="flex justify-center items-center min-h-screen ">
       <div className="bg-gray-900 p-8 rounded-lg shadow-lg w-full max-w-md border-2 border-white">
         <h2 className="text-3xl font-bold text-center text-white mb-4 tracking-widest uppercase">Buy Token</h2>
@@ -59,6 +62,7 @@ const BuyToken = () => {
             <select id="asset" name="asset" className="w-full p-2 rounded-md bg-gray-700 text-white">
               <option value="" disabled selected>Select Asset</option>
               <option value="native">XLM</option>
+
               <option value="native">BRIC</option>
             </select>
           </div>
