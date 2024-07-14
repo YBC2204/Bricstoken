@@ -59,8 +59,8 @@ const Sign = () => {
     });
       
       console.log(response.data);
-      console.log(token);
-      localStorage.setItem('token', token);
+      //console.log(token);
+      //localStorage.setItem('token', token);
     
       setRegistered(true);
     } catch (error) {
