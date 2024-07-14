@@ -25,7 +25,7 @@ const BuyToken = () => {
   return (
     <div className="flex justify-center items-center min-h-screen ">
       <div className="bg-gray-900 p-8 rounded-lg shadow-lg w-full max-w-md border-2 border-white">
-        <h2 className="text-2xl font-semibold text-center text-white mb-4 tracking-widest uppercase">Buy Token</h2>
+        <h2 className="text-3xl font-bold text-center text-white mb-4 tracking-widest uppercase">Buy Token</h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <label className=" text-white mb-2">Select Country</label>
