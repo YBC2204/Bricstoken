@@ -70,15 +70,8 @@ const BuyToken = () => {
               Buy Now
             </button>
           </div>
-<<<<<<< HEAD
         </form>
       </div>
-=======
-         
-        </div>
-     
-    </div>
->>>>>>> 041b829a349178da4f04cf3ca08289f590eff82a
     </div>
   );
 };
