@@ -31,7 +31,7 @@ const Home = () => {
   return (
     <div className='h-screen flex'>
       <div className='fixed bg-gradient-to-br from-slate-900 to-slate-800 w-full sm:w-[20%] h-full flex flex-col gap-3 p-3'>
-        <div className='text-center text-white text-2xl mb-5 mt-5 font-bold'>BRICSPAY</div>
+        <div className='text-center text-white text-2xl mb-5 mt-5 font-bold'>ßRICSPAY</div>
         <div className='flex flex-col gap-3'>
           <div className={sideclass} onClick={() => scrollToRef(balanceRef)}>
             <BalanceIcon />
@@ -70,9 +70,7 @@ const Home = () => {
         <div ref={transactionRef}>
           <Transaction />
         </div>
-        <div ref={paypeerRef}>
-          <Paypeer />
-        </div>
+      
         <div ref={historyRef}>
           <History />
         </div>
