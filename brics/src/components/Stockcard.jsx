@@ -48,7 +48,7 @@ const Stockcard = ({ id, company, price, stname }) => {
         {error && <div className="text-red-500 mt-2">{error}</div>}
       </div>
     </div>
-    </div>
+  
   );
 };
 
