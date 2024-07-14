@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import {useNavigate} from 'react-router-dom'
 import BuyTokens from '../components/BuyTokens';
 import Balance from '../components/Balance';
 import Transaction from '../components/Transaction';
@@ -19,6 +20,7 @@ const Home = () => {
   const historyRef = useRef(null);
   const stockRef = useRef(null);
   const paypeerRef = useRef(null);
+  const nav = useNavigate(); 
 
   const sideclass = "flex items-center gap-2 p-3 bg-gray-800 hover:bg-gray-700 rounded-md hover:underline hover:cursor-pointer";
 
@@ -53,7 +55,7 @@ const Home = () => {
           </div>
         </div>
         <div className='mt-auto text-white text-center'>
-        <button className="bg-white hover:bg-green-700 text-black font-bold py-2 px-10 rounded">
+        <button className="bg-white hover:bg-green-700 text-black font-bold py-2 px-10 rounded" onClick={()=>nav('/')}>
          Sign Out
         </button>
         </div>

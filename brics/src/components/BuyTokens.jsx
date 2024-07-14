@@ -4,6 +4,7 @@ import axios from 'axios';
 const BuyToken = () => {
   const [amount, setAmount] = useState('');
   const [error, setError] = useState('');
+  const[stat,setStat] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -15,6 +16,7 @@ const BuyToken = () => {
           'Authorization': `Bearer ${token}`,
         }
       });
+      setStat(response.message);
       // Handle response
     } catch (error) {
       console.error('Buy Token failed:', error);
@@ -68,8 +70,15 @@ const BuyToken = () => {
               Buy Now
             </button>
           </div>
+<<<<<<< HEAD
         </form>
       </div>
+=======
+         
+        </div>
+     
+    </div>
+>>>>>>> 041b829a349178da4f04cf3ca08289f590eff82a
     </div>
   );
 };
