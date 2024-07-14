@@ -25,7 +25,7 @@ const Stock = () => {
   //   { name: 'Excel', price: 21.00, change: 1.5 },
   //   { name: 'Lotus', price: 13.00, change: -2.0 },
   // ];
-
+  
   return (
     <div className="  px-4  ">
       <h1 className="text-3xl font-bold text-center mb-20">INDIAN STOCK MARKET</h1>
